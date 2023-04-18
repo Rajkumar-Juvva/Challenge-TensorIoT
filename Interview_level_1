@@ -1,0 +1,90 @@
+'''
+i/p  :  'This is a sample string'
+o/p1 :  "THS,S,SMPL,STRNG"
+o/p2 :  STRNG,SMPL,S,THS
+'''
+
+input = 'This is a sample string'
+res = []
+for i in input.split():
+    sub = ''
+    for j in i:
+        if j in "aeiou":
+            continue
+        else:
+            sub+=j.upper()
+    if sub:
+        res.append(sub)
+res = ','.join(res[::-1])
+# print(res)
+
+'''
+i/p: [1,8,4,0,2,4,2,6,1,2]
+o/p: [1,8,4,0,2,6]
+'''
+input = [1,8,4,0,2,4,2,6,1,2]
+res = []
+for i in input:
+    if i not in res:
+        res.append(i)
+# print(res)
+
+
+'''
+Using list comprehension, create a list of all multiples of 7 from 100 to 150
+'''
+res = [i for i in range(100,150+1) if i%7==0]
+# print(res)
+
+def check_denominator(func):
+    def inner(a,b):
+        if b==0:
+            print("Denominator should not be zero")
+            return 0
+        else:
+            return func(a,b)
+    return inner
+
+@check_denominator
+def div(a,b):
+    return a//b
+
+# return_val = check_denominator(div)
+# return_val(a,b)
+
+# print(div(2,1))
+# print(div(2,0))
+
+class a:
+    def __init__(self):
+        pass
+class b:
+    def __init__(self):
+        pass
+
+class c(a,b):
+    def __init__(self):
+        super().__init__()
+
+
+class d(b):
+    def __init__(self):
+        super().__init__()
+
+class e(a):
+    def __init__(self):
+        super().__init__()
+
+
+file = open("file.txt",'r')
+
+for i in file:
+    if "word" in i:
+        print("word found")
+
+        
+
+
+
+
+
